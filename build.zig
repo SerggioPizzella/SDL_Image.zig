@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const lib = b.addStaticLibrary(.{
-        .name = "SDL_Image.zig",
+        .name = "SDL_Image",
         .target = target,
         .optimize = optimize,
         .link_libc = true,
