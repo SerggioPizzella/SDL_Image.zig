@@ -18,13 +18,13 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(lib);
     lib.linkLibrary(sdl_dep.artifact("SDL3"));
 
-    lib.defineCMacro("USE_STBIMAGE", "1");
-    lib.defineCMacro("LOAD_BMP", "1");
-    lib.defineCMacro("LOAD_GIF", "1");
-    lib.defineCMacro("LOAD_JPG", "1");
-    lib.defineCMacro("LOAD_PNG", "1");
-    lib.defineCMacro("LOAD_SVG", "1");
-    lib.defineCMacro("LOAD_TGA", "1");
+    lib.root_module.addCMacro("USE_STBIMAGE", "1");
+    lib.root_module.addCMacro("LOAD_BMP", "1");
+    lib.root_module.addCMacro("LOAD_GIF", "1");
+    lib.root_module.addCMacro("LOAD_JPG", "1");
+    lib.root_module.addCMacro("LOAD_PNG", "1");
+    lib.root_module.addCMacro("LOAD_SVG", "1");
+    lib.root_module.addCMacro("LOAD_TGA", "1");
 
     lib.addCSourceFiles(.{
         .files = &[_][]const u8{
